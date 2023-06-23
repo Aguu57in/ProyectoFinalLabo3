@@ -1,0 +1,45 @@
+/*Loader*/
+.load_container{
+    background-color: #131313;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: 999;
+    transition: all 1.5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .loader {
+    overflow: visible;
+    height: fit-content;
+    width: fit-content;
+    padding: 20px;
+    display: flex;
+  }
+  
+  .load_container::after, .load_container::before{
+    top: 0;
+    position: absolute;
+    content: '';
+  }
+  
+  .logo {
+    fill: none;
+    stroke-dasharray: 29px;
+   /*<-- Play with this number until it look cool */
+    stroke: gold;
+    animation: load 10s infinite linear;
+  }
+  
+  @keyframes load {
+    0% {
+      stroke-dashoffset: 0px;
+    }
+  
+    100% {
+      stroke-dashoffset: 290px;
+   /* <-- This number should always be 10 times the number up there*/
+    }
+  }
